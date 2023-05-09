@@ -21,6 +21,9 @@ ENV GCLOUD_GKE_CLUSTER=XXXX
 ENV GCLOUD_PROJECT=XXXX
 ENV HELM_SECRETS_BACKEND=vals
 
+# Print debugging information:
+RUN echo "I'm building for ${TARGETARCH}"
+
 # Change working directory:
 WORKDIR /tmp/scripts
 
