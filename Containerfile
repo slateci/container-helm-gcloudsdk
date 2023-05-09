@@ -11,7 +11,7 @@ FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:429.0.0
 ARG helmplugindiffversion=3.7.0
 ARG helmpluginsecretsversion=4.4.2
 ARG helmversion=3.11.3
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 ARG varsversion=0.25.0
 
 # Docker container environmental variables:
