@@ -1,9 +1,4 @@
 
-# NOTE: This file requires `docker buildx`. See the following resources for more details.
-#
-# * https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
-#
-
 # syntax=docker/dockerfile:1
 FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:429.0.0
 
@@ -19,10 +14,11 @@ ENV GOOGLE_APPLICATION_CREDENTIALS=/work/gcloud-key.json
 ENV GCLOUD_COMPUTE_ZONE=XXXX
 ENV GCLOUD_GKE_CLUSTER=XXXX
 ENV GCLOUD_PROJECT=XXXX
+ENV GKE_CLUSTER_NAME=secundus
 ENV HELM_SECRETS_BACKEND=vals
 
 # Print debugging information:
-RUN echo "I'm building for ${TARGETARCH}"
+RUN echo "I'm building for ${TARGETARCH}..."
 
 # Change working directory:
 WORKDIR /tmp/scripts
