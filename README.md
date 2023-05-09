@@ -15,10 +15,8 @@ A native `amd64`/`arm64` utility container image for Helm and the Google Cloud S
 
 ### Example Commands
 
-1. Check out one of the SLATE repositories and change directories to its location on your 
-1. Run the image and mount the present working directory.
-
-   When the container executes, complete the prompts to authenticate against the Google Cloud Platform (GCP).
+1. Check out one of the SLATE repositories with a Helm chart and change directories to its location on your machine.
+1. Run the image and mount the present working directory. The container will present a series of prompts to be completed.
 
    ```shell
    $ podman run -it -v ${PWD}:/work:Z ghcr.io/slateci/container-helm-gcloudsdk:latest
@@ -33,7 +31,7 @@ A native `amd64`/`arm64` utility container image for Helm and the Google Cloud S
    kubeconfig entry generated for <cluster name>.
    ```
 
-1. Verify the configuration by getting the pods in the `development` namespace.
+1. Verify your configuration by getting the pods in the `development` namespace.
 
    ```shell
    [root@454344d8c4ca work]# kubectl get pods --namespace development
@@ -44,6 +42,13 @@ A native `amd64`/`arm64` utility container image for Helm and the Google Cloud S
    slate-portal-dev-deployment-6d7874944d-8gl8c   1/1     Running   0          2d21h
    ...
    ...
+   ```
+
+1. Try decrypting a secrets file to stdout.
+
+   ```shell
+   [root@454344d8c4ca work]# cd vars/dev/
+   [root@454344d8c4ca dev]# helm secrets decrypt secrets.yml
    ```
 
 1. Try other commands described in the [internal documentation](https://docs.google.com/document/d/1Tn31mUMoJpKJrSvxemOAgS39NkJLQPk_AN5YwUfk4gM/edit?usp=sharing)
