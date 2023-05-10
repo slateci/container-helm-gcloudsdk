@@ -16,6 +16,9 @@ ENV HELM_SECRETS_BACKEND=vals
 # Print debugging information:
 RUN echo "I'm building for ${TARGETARCH}..."
 
+# Install extra packages:
+RUN apt-get install -y vim
+
 # Change working directory:
 WORKDIR /tmp/scripts
 
