@@ -47,7 +47,7 @@ A native `amd64`/`arm64` utility container image for Helm and the Google Cloud S
 1. Try decrypting a secrets file to stdout.
 
    ```shell
-   [root@454344d8c4ca work]# cd vars/dev/
+   [root@454344d8c4ca work]# cd resources/chart/vars/dev/
    [root@454344d8c4ca dev]# helm secrets decrypt secrets.yml
    ```
 
